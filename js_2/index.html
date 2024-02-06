@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS_2</title>
+  </head>
+  <body>
+    <!-- assign: evaluation -->
+    <script>
+      // let a = 5;
+      // let b, c;
+
+      // b = (a * 5);
+      // b = (c = b/2);
+
+      //How it should be://
+      let a = 5;
+      let b, c;
+
+      b = a * 5;
+      b = c = b / 2;
+    </script>
+
+    <!-- Number: age -->
+    <script>
+      let age = prompt("Insert your age:");
+      if (!isNaN(age)) {
+        let currentYear = new Date().getFullYear();
+        let birthYear = currentYear - parseInt(age);
+        alert("DOB: " + birthYear);
+      } else {
+        alert("Please, insert correct data!");
+      }
+    </script>
+
+    <!--Number: temperature-->
+    <script>
+      let temperature = parseFloat(prompt("Введите температуру:"));
+      let unit = prompt("Введите единицу измерения (C или F):");
+      if (!isNaN(temperature)) {
+        if (unit === "C" || unit === "c") {
+          let fahrenheit = (temperature * 9) / 5 + 32;
+          alert("Температура в Фаренгейтах: " + fahrenheit + "°F");
+        } else if (unit === "F" || unit === "f") {
+          let celsius = ((temperature - 32) * 5) / 9;
+          alert("Температура в Цельсиях: " + celsius + "°C");
+        } else {
+          alert(
+            "Пожалуйста, введите 'C' или 'F' в качестве единицы измерения."
+          );
+        }
+      } else {
+        alert(
+          "Пожалуйста, введите корректное числовое значение для температуры."
+        );
+      }
+    </script>
+
+    <!-- Number: divide -->
+    <script>
+      let делимое = parseFloat(prompt("Введите делимое число:"));
+      let делитель = parseFloat(prompt("Введите делитель:"));
+      if (!isNaN(делимое) && !isNaN(делитель)) {
+        if (делитель !== 0) {
+          let результат = Math.floor(делимое / делитель);
+          alert("Результат целочисленного деления: " + результат);
+        } else {
+          alert("Делитель не может быть равен нулю.");
+        }
+      } else {
+        alert("Пожалуйста, введите числовые значения для деления.");
+      }
+    </script>
+
+    <!-- Number: currency -->
+    <script>
+      const курс = 38;
+      let сумма = parseFloat(prompt("Введите сумму в одной валюте:"));
+      if (!isNaN(сумма)) {
+        let обмененнаяСумма = (сумма * курс).toFixed(2);
+        alert("Результат обмена: " + обмененнаяСумма);
+      } else {
+        alert("Пожалуйста, введите корректную сумму.");
+      }
+    </script>
+
+    <!-- Number: RGB -->
+    <script>
+      let red = parseInt(prompt("Введите значение красного (0-255):"));
+      let green = parseInt(prompt("Введите значение зеленого (0-255):"));
+      let blue = parseInt(prompt("Введите значение синего (0-255):"));
+      if (
+        !isNaN(red) &&
+        !isNaN(green) &&
+        !isNaN(blue) &&
+        red >= 0 &&
+        red <= 255 &&
+        green >= 0 &&
+        green <= 255 &&
+        blue >= 0 &&
+        blue <= 255
+      ) {
+        let redHex = red.toString(16).padStart(2, "0");
+        let greenHex = green.toString(16).padStart(2, "0");
+        let blueHex = blue.toString(16).padStart(2, "0");
+        let colorHex = "#" + redHex + greenHex + blueHex;
+        alert("CSS-цвет: " + colorHex);
+      } else {
+        alert("Пожалуйста, введите корректные значения от 0 до 255.");
+      }
+    </script>
+
+    <!-- Number: flats -->
+    <script>
+      let количествоЭтажей = parseInt(
+        prompt("Введите количество этажей в доме:")
+      );
+      let количествоКвартирНаЭтаже = parseInt(
+        prompt("Введите количество квартир на этаже:")
+      );
+      if (!isNaN(количествоЭтажей) && !isNaN(количествоКвартирНаЭтаже)) {
+        let номерКвартиры = parseInt(prompt("Введите номер квартиры:"));
+        if (!isNaN(номерКвартиры)) {
+          let номерПодъезда = Math.ceil(
+            номерКвартиры / (количествоЭтажей * количествоКвартирНаЭтаже)
+          );
+          let номерЭтажа = Math.ceil(
+            (номерКвартиры -
+              (номерПодъезда - 1) *
+                количествоЭтажей *
+                количествоКвартирНаЭтаже) /
+              количествоКвартирНаЭтаже
+          );
+          alert(
+            "Квартира с номером " +
+              номерКвартиры +
+              " находится в подъезде №" +
+              номерПодъезда +
+              " на " +
+              номерЭтажа +
+              "-м этаже."
+          );
+        } else {
+          alert("Пожалуйста, введите корректный номер квартиры.");
+        }
+      } else {
+        alert(
+          "Пожалуйста, введите корректное количество этажей и квартир на этаже."
+        );
+      }
+    </script>
+  </body>
+</html>
