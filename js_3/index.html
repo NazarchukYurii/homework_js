@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- String: greeting -->
+
+    <script>
+      let name = prompt("Whats your name?");
+      alert("Hello," + name);
+    </script>
+
+    <!-- String: gopni4ek -->
+
+    <script>
+      let inputString = prompt("Please, insert the string:");
+      let words = inputString.split(",");
+      let result1 = words.join(", блин,");
+      alert(result1);
+    </script>
+
+    <!-- String: capitalize -->
+
+    <script>
+      let str = "cANBerRa";
+      let result2 = str[0].toUpperCase() + str.slice(1).toLowerCase();
+      alert(result2);
+    </script>
+
+    <!-- String: word count -->
+
+    <script>
+      let str2 = prompt("Please, insert the string here...");
+      let word = str2.split(" ");
+      let wordCount = word.length;
+      alert("There are a " + wordCount + " words here");
+    </script>
+
+    <!-- String: credentials -->
+
+    <script>
+      let firstName = prompt("Insert your name...");
+      let lastName = prompt("Insert your surname...");
+      let middleName = prompt("Insert your pantonymic...");
+      firstName =
+        firstName.trim()[0].toUpperCase() +
+        firstName.trim().slice(1).toLowerCase();
+      lastName =
+        lastName.trim()[0].toUpperCase() +
+        lastName.trim().slice(1).toLowerCase();
+      middleName =
+        middleName.trim()[0].toUpperCase() +
+        middleName.trim().slice(1).toLowerCase();
+      let fullName = firstName + " " + lastName + " " + middleName;
+      alert(fullName);
+    </script>
+
+    <!-- String: beer -->
+
+    <script>
+      let str3 = "Було жарко. Василь пив пиво вприкуску з креветками";
+      let result3 = str3
+        .split(" ")
+        .map((word) => (word === "пиво" ? "чай" : word))
+        .join(" ");
+      alert(result3);
+    </script>
+
+    <!-- String: no tag -->
+
+    <script>
+      let str4 = "якийсь текст, в якому є один тег <br /> і всяке інше";
+      let firstIndex = str4.indexOf("<");
+      let secondIndex = str4.indexOf(">", firstIndex) + 1;
+      result4 = str4.slice(0, firstIndex) + str4.slice(secondIndex);
+      alert(result4);
+    </script>
+
+    <!-- String: big tag -->
+
+    <script>
+      let str5 = "якийсь текст, в якому є один тег <br /> і всяке інше";
+      let startIndex = str5.indexOf("<");
+      let endIndex = str5.indexOf(">", startIndex) + 1;
+      let tag = str5.slice(startIndex, endIndex).toUpperCase();
+      let result5 = str5.slice(0, startIndex) + tag + str5.slice(endIndex);
+      alert(result5);
+    </script>
+
+    <!-- String: new line -->
+
+    <script>
+      let inputString1 = prompt(
+        "Введите строку. Используйте \\n как маркер нового рядка:"
+      );
+      inputString1 = inputString1.split("\\n").join("\n");
+      alert(inputString1);
+    </script>
+  </body>
+</html>
