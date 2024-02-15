@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>homework 4</title>
+  </head>
+  <body>
+    <!-- Number: odd -->
+    <script>
+      let popup1 = prompt("Введите какое-то число:");
+      if (!isNaN(popup1)) {
+        let number = parseFloat(popup1);
+        if (number % 2 === 0) {
+          alert("Парное число.");
+        } else {
+          alert("Не парное число.");
+        }
+      } else {
+        alert("Значение не является числом!");
+      }
+    </script>
+    <!-- String: lexics -->
+    <script>
+      let input = prompt("Введите Ваш текст:");
+      let words = ["qwe", "asd", "zxc", "rty"];
+      let isWordFound = false;
+      for (let i = 0; i < words.length; i++) {
+        if (input.indexOf(words[i]) !== -1) {
+          isWordFound = true;
+          break;
+        }
+      }
+      if (isWordFound) {
+        alert("В тексте некорректные слова.");
+      } else {
+        alert("Текст корректный!.");
+      }
+    </script>
+    <!-- Boolean -->
+    <!-- Boolean: if -->
+    <script>
+      let quest1 = confirm("Вы человек?");
+      let quest2 = confirm("Вы мужчина?");
+      alert("Являетесь ли вы человеком?: " + (quest1 ? "Да" : "Нет"));
+      alert("Являетесь ли вы мужчиной?: " + (quest2 ? "Да" : "Нет"));
+      let coffee = confirm("Вы любите кофе?");
+      if (coffee) {
+        alert("Кофеман");
+      } else {
+        alert("Чаеман)");
+      }
+    </script>
+    <!-- Ternary -->
+    <script>
+      let gender = confirm("Ваш пол - мужчина?") ? "мужчина" : "женщина";
+      alert("Вы " + gender);
+    </script>
+    <!-- Prompt: or -->
+    <script>
+      let age = prompt("Ввудите свой возраст:");
+      if (!age) {
+        alert("Ошибка: Вы не ввели свой возраст или нажали 'Отменить'");
+      } else {
+        alert("Ваш возраст: " + age);
+      }
+    </script>
+    <!-- Confirm: or this days -->
+    <script>
+      var shopping = confirm("Шопінг?");
+      if (!shopping) {
+        alert("Ти - бяка");
+      } else {
+      }
+    </script>
+    <!-- Confirm: if this days -->
+    <script>
+      let shopping = confirm("Шопінг?");
+      if (shopping) {
+      } else {
+        alert("Ти - бяка");
+      }
+    </script>
+  </body>
+</html>
