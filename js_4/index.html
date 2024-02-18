@@ -67,7 +67,7 @@
     </script>
     <!-- Confirm: or this days -->
     <script>
-      var shopping = confirm("Шопінг?");
+      let shopping = confirm("Шопінг?");
       if (!shopping) {
         alert("Ти - бяка");
       } else {
@@ -75,11 +75,119 @@
     </script>
     <!-- Confirm: if this days -->
     <script>
-      let shopping = confirm("Шопінг?");
-      if (shopping) {
+      let shopping2 = confirm("Шопінг?");
+      if (shopping2) {
       } else {
         alert("Ти - бяка");
       }
     </script>
+    <!-- Default: or -->
+    <script>
+      let firstName = prompt("Insert name:") || "Test";
+      let lastName = prompt("Insert surname:") || "Testov";
+      let middleName = prompt("Insert middlename:") || "Testovich";
+      alert("name:", firstName);
+      alert("surname:", lastName);
+      alert("middlename:", middleName);
+    </script>
+    <!-- Default: if -->
+    <script>
+      let firstName2 = prompt("Insert name:");
+      if (!firstName2) {
+        firstName2 = "Test";
+      }
+      let lastName2 = prompt("Insert surname:");
+      if (!lastName2) {
+        lastName2 = "Testov";
+      }
+      let middleName2 = prompt("Insert middlename:");
+      if (!middleName2) {
+        middleName2 = "Testovich";
+      }
+      alert("name:", firstName);
+      alert("surname:", lastName);
+      alert("middlename:", middleName);
+    </script>
+    <!-- Login and password -->
+    <script>
+      let login = prompt("Insert login:");
+      if (login === "admin") {
+        let password = prompt("Insert password:");
+        if (password === "qwerty") {
+          alert("Success!");
+        } else {
+          alert("Incorrect password!");
+        }
+      } else {
+        alert("Incorrect login!");
+      }
+    </script>
+    <!-- Currency exchange -->
+    <script>
+      let currency = prompt(
+        "Введите название валюты (пример, USD, EUR):"
+      ).toUpperCase();
+      let isBuying = confirm("Покупаете?");
+      let rate;
+      if (currency === "USD") {
+        rate = isBuying ? 27.5 : 27.0;
+      } else if (currency === "EUR") {
+        rate = isBuying ? 30.0 : 29.5;
+      } else {
+        alert("Валюта не поддерживается!");
+      }
+      let amount = parseFloat(prompt("Введите сумму обмена:"));
+      if (rate) {
+        let result = isBuying ? amount / rate : amount * rate;
+        alert(`Результат: ${result.toFixed(2)} ${isBuying ? "грн" : currency}`);
+      }
+    </script>
+    <!-- Scissors -->
+    <script>
+      let userChoice = prompt(
+        "Введите ваш выбор (камень, ножницы, бумага):"
+      ).toLowerCase();
+      let computerChoice;
+      let randomNum = Math.random();
+      if (randomNum < 0.33) {
+        computerChoice = "камень";
+      } else if (randomNum < 0.66) {
+        computerChoice = "ножницы";
+      } else {
+        computerChoice = "бумага";
+      }
+      alert("Компьютер победил: " + computerChoice);
+      let winner;
+      if (userChoice === computerChoice) {
+        winner = "Ничья!";
+      } else if (
+        (userChoice === "камень" && computerChoice === "ножницы") ||
+        (userChoice === "ножницы" && computerChoice === "бумана") ||
+        (userChoice === "бумана" && computerChoice === "камень")
+      ) {
+        winner = "Вы победили!";
+      } else {
+        winner = "Компьютер победил!";
+      }
+      alert(winner);
+    </script>
+    <!-- Завдання на чорний пояс -->
+    <!-- <script>
+      const userChoice = prompt(
+        "Введите ваш выбор (камень, ножницы, бумага):"
+      ).toLowerCase();
+      const computerChoice = ["камень", "ножницы", "бумага"][
+        Math.floor(Math.random() * 3)
+      ];
+      const winner =
+        userChoice === computerChoice
+          ? "Ничья!"
+          : (userChoice === "камень" && computerChoice === "ножницы") ||
+            (userChoice === "ножницы" && computerChoice === "бумага") ||
+            (userChoice === "бумага" && computerChoice === "камень")
+          ? "Вы победили!"
+          : "Компьютер победил!";
+      alert(`Компьютер выбрал: ${computerChoice}\n${winner}`);
+    </script> -->
   </body>
 </html>
