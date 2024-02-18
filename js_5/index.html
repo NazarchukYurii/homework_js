@@ -51,13 +51,14 @@
     </script>
     <!-- Multiply table -->
     <script>
-      const multiplicationTable1 = [
-        [0, 0, 0, 0, 0],
-        [0, 1, 2, 3, 4],
-        [0, 2, 4, 6, 8],
-        [0, 3, 6, 9, 12],
-        [0, 4, 8, 12, 16],
-      ];
+      const multiplicationTable1 = [];
+      for (let i = 1; i <= 5; i++) {
+        const row = [];
+        for (let j = 1; j <= 5; j++) {
+          row.push(i * j);
+        }
+        multiplicationTable1.push(row);
+      }
       alert(multiplicationTable1);
     </script>
     <!-- Multiply table slice -->
@@ -105,8 +106,8 @@
         let element = originalArray.pop();
         reversedArray.push(element);
       }
-      console.log("Оригинальный массив:", originalArray);
-      console.log("Массив в обратном порядке:", reversedArray);
+      alert("Оригинальный массив:", originalArray);
+      alert("Массив в обратном порядке:", reversedArray);
     </script>
     <!-- Reverse 2 -->
     <script>
@@ -119,12 +120,12 @@
         return reversedArray;
       }
       let doubleReversedArray = reverseArray(reversedArray);
-      console.log("Второй массив перевернуть еще раз:", doubleReversedArray);
+      alert("Второй массив перевернуть еще раз:", doubleReversedArray);
     </script>
     <!-- Copy -->
     <script>
       const shallowCopy = multiplicationTable1.slice();
-      console.log(shallowCopy);
+      alert(shallowCopy);
     </script>
     <!-- Deep Copy -->
     <script>
@@ -132,21 +133,21 @@
       for (let i = 0; i < multiplicationTable1.length; i++) {
         deepCopy.push(multiplicationTable1[i].slice());
       }
-      console.log(deepCopy);
+      alert(deepCopy);
     </script>
     <!-- Flat -->
     <script>
       const flattenedArray = [].concat(...multiplicationTable1);
-      console.log(flattenedArray);
+      alert(flattenedArray);
     </script>
     <!-- Destruct -->
     <script>
       let userInput = prompt("Введите строку:");
       let characters = [...userInput];
       let [firstLetter, , , , fifthLetter, , , , ninthLetter] = characters;
-      console.log("Первая буква:", firstLetter);
-      console.log("Пятая буква:", fifthLetter);
-      console.log("Девятая цифра:", ninthLetter);
+      alert("Первая буква:", firstLetter);
+      alert("Пятая буква:", fifthLetter);
+      alert("Девятая цифра:", ninthLetter);
     </script>
     <!-- Destruct default -->
     <script>
@@ -154,9 +155,9 @@
       let characters1 = [...userInput];
       let [secondLetter = "!", , fourthLetter = "!", fifthLetter1 = "!"] =
         characters;
-      console.log("Друга літера:", secondLetter);
-      console.log("Четверта літера:", fourthLetter);
-      console.log("П'ята літера:", fifthLetter);
+      alert("Друга літера:", secondLetter);
+      alert("Четверта літера:", fourthLetter);
+      alert("П'ята літера:", fifthLetter);
     </script>
     <!-- For alert -->
     <script>
@@ -242,7 +243,7 @@
         });
         return capitalizedWords.join(" ");
       };
-      console.log(capitalize("cANBerRa"));
+      alert(capitalize("cANBerRa"));
     </script>
     <!-- Map Capitalize -->
     <script>
@@ -253,7 +254,7 @@
       let words4 = userInput4.split(" ");
       let capitalizedWords4 = words4.map(capitalize);
       let result = capitalizedWords4.join(" ");
-      console.log(result);
+      alert(result);
     </script>
     <!-- Filter Lexics -->
     <script>
@@ -262,7 +263,7 @@
       let words5 = userInput5.split(" ");
       let validWords5 = words5.filter((word) => !invalidWords5.includes(word));
       let result5 = validWords5.join(" ");
-      console.log(result);
+      alert(result);
     </script>
     <!-- Beep Lexics -->
     <script>
@@ -276,7 +277,7 @@
       const userInput6 = prompt("Введіть рядок:");
       const bannedWords6 = ["bad", "word", "hello"];
       const result6 = censorWords(userInput, bannedWords6);
-      console.log(result);
+      alert(result);
     </script>
     <!-- Reduce HTML -->
     <script>
@@ -302,7 +303,7 @@
           character === "}"
         ) {
           if (bracketsStack.length === 0) {
-            console.log(
+            alert(
               `Помилка: дужка "${character}" не має відповідної відкриваючої дужки на позиції ${i}`
             );
             break;
@@ -313,7 +314,7 @@
             (character === "]" && lastOpeningBracket.character !== "[") ||
             (character === "}" && lastOpeningBracket.character !== "{")
           ) {
-            console.log(
+            alert(
               `Помилка: дужка "${character}" не відповідає дужці "${lastOpeningBracket.character}" на позиції ${lastOpeningBracket.index}`
             );
             break;
@@ -322,9 +323,9 @@
         i++;
       }
       if (bracketsStack.length === 0) {
-        console.log("Рядок не має помилок у розстановці дужок.");
+        alert("Рядок не має помилок у розстановці дужок.");
       } else {
-        console.log("Помилка: є непарні дужки у рядку.");
+        alert("Помилка: є непарні дужки у рядку.");
       }
     </script>
   </body>
